@@ -59,7 +59,7 @@ let coffees = [
 
 
 //This is a variable that pulls the id of #coffees from the html tag of tbody
-let tbody = document.querySelector('#coffees');
+let showMeTheCoffee = document.querySelector('#coffees');
 
 //This is a variable that is pulling the id from the submit button on the form
 let submitButton = document.querySelector('#submit');
@@ -68,7 +68,7 @@ let roastSelection = document.querySelector('#roast-selection');
 
 /*This will activate the function of renderCoffees into the tbody html element
 * forming the rows and data of the table */
-tbody.innerHTML = renderCoffees(coffees);
+showMeTheCoffee.innerHTML = renderCoffees(coffees);
 
 /*When you click the button on the form, Do something:
 * Aka: Filter through the array of coffees

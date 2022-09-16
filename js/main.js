@@ -1,27 +1,36 @@
 "use strict"
 
+
+/*We want to sort the coffees by ascending order and display them on the page*/
+
+
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    let html = '<div class="coffee">';
+    // html += '<div>' + coffee.id + '</div>';
+    html += '<h2>' + coffee.name + '</h2>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
+    // console.log(html);
 }
 
+
+/*This function displays the array in ascending order*/
 function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    let html = '';
+    for(let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
+
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
+    let selectedRoast = roastSelection.value;
+    let filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
@@ -31,7 +40,7 @@ function updateCoffees(e) {
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
+let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -48,10 +57,20 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
 
+//This is a variable that pulls the id of #coffees from the html tag of tbody
+let tbody = document.querySelector('#coffees');
+
+//This is a variable that is pulling the id from the submit button on the form
+let submitButton = document.querySelector('#submit');
+
+let roastSelection = document.querySelector('#roast-selection');
+
+/*This will activate the function of renderCoffees into the tbody html element
+* forming the rows and data of the table */
 tbody.innerHTML = renderCoffees(coffees);
 
+/*When you click the button on the form, Do something:
+* Aka: Filter through the array of coffees
+* */
 submitButton.addEventListener('click', updateCoffees);

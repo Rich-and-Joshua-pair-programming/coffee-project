@@ -1,57 +1,79 @@
-* {
-    box-sizing: border-box
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    margin: 15px 0;*/
+/*}*/
+
+/*td, th {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px 10px;*/
+/*}*/
+
+body {
+    font-family: sans-serif;
+}
+
+#coffees {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*#coffees>* {*/
+/*    flex: 1 1 100px;*/
+/*    height: 90px;*/
+/*}*/
+
+.container {
+    display: flex;
 }
 
 h1 {
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+}
+
+.coffee-name {
+    font-size: 24px;
+}
+
+.coffee-roast {
+    color: #aaaaaa;
+    padding-left: 8px;
+    font-size: 18px;
+    padding-top: 7px;
+}
+
+.right-input {
     display: flex;
-    justify-content: center;
-}
-.roastContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 2rem;
-    margin-right: 2rem;
-
-
-}
-select {
-    width: 25rem;
-    padding: 10px;
-}
-input {
-    width: 25rem;
-    padding: 10px;
-    margin: 5px;
-
-}
-input:nth-last-child(1) {
-    background: dodgerblue;
-    box-shadow:
-}
-.search-coffee {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: 2rem;
-    margin-right: 2rem;
-
-
-}
-label {
-    display: flex;
-    font-weight: bolder;
-    font-size: 1.5rem;
-    margin-bottom: 2px;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 220px;
+    font-size: 22px;
 }
 
-.coffeeHouse {
-    display: flex;
-    position: absolute;
-    flex-flow: column wrap;
-    width: 40%;
-    margin-top: 1rem;
-    /*flex-direction: column;*/
+h1 {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.coffee-roast {
+    margin-right: 150px;
+}
+
+#roast-selection {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#submit {
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
 }
 
 

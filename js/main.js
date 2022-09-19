@@ -71,10 +71,6 @@ let coffees = [
 //This is a variable that pulls the id of #coffees from the empty div
 let showMeTheCoffee = document.querySelector('#coffees');
 
-//This is a variable that is pulling the id from the submit button on the form
-// let submitButton = document.getElementsBy('value');
-// console.log(submitButton);
-
 
 //Pulls all children nodes (options) of the select element
 let roastSelection = document.getElementById("roast-selection");
@@ -84,14 +80,8 @@ console.log(roastSelection);
 //This will allow the list to update With the dropdown alone.
 roastSelection.addEventListener("change", updateCoffees);
 
-// roastValue.addEventListener("click", updateCoffees);
-// console.log(roastSelection);
 
 /*This will activate the function of renderCoffees the empty div
 * displaying our coffees onto the page */
 showMeTheCoffee.innerHTML = renderCoffees(coffees);
 
-/*When you click the button on the form, Do something:
-* Aka: Filter through the array of coffees
-* */
-// submitButton.addEventListener("click", updateCoffees);

@@ -1,9 +1,17 @@
 "use strict"
 
+/*We want to submit the form with just the dropdown button*/
 
-/*We want to sort the coffees by ascending order and display them on the page*/
+/*Collecting Form Data
+* 1)how to collect data form text boxes
+*
+*
+* */
+
+// document.getElementById()
 
 
+/*This is making our main list of coffees*/
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
     // html += '<div>' + coffee.id + '</div>';
@@ -26,7 +34,7 @@ function renderCoffees(coffees) {
 }
 
 
-
+/*This is what is controlling the list of coffees by Roast Type*/
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
@@ -34,9 +42,11 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (selectedRoast === "all") {
+            filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    showMeTheCoffee.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -58,19 +68,30 @@ let coffees = [
 ];
 
 
-//This is a variable that pulls the id of #coffees from the html tag of tbody
+//This is a variable that pulls the id of #coffees from the empty div
 let showMeTheCoffee = document.querySelector('#coffees');
 
 //This is a variable that is pulling the id from the submit button on the form
-let submitButton = document.querySelector('#submit');
+// let submitButton = document.getElementsBy('value');
+// console.log(submitButton);
 
-let roastSelection = document.querySelector('#roast-selection');
 
-/*This will activate the function of renderCoffees into the tbody html element
-* forming the rows and data of the table */
+//Pulls all children nodes (options) of the select element
+let roastSelection = document.getElementById("roast-selection");
+console.log(roastSelection);
+
+
+//This will allow the list to update With the dropdown alone.
+roastSelection.addEventListener("change", updateCoffees);
+
+// roastValue.addEventListener("click", updateCoffees);
+// console.log(roastSelection);
+
+/*This will activate the function of renderCoffees the empty div
+* displaying our coffees onto the page */
 showMeTheCoffee.innerHTML = renderCoffees(coffees);
 
 /*When you click the button on the form, Do something:
 * Aka: Filter through the array of coffees
 * */
-submitButton.addEventListener('click', updateCoffees);
+// submitButton.addEventListener("click", updateCoffees);

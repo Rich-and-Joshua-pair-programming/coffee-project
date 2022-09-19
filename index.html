@@ -10,17 +10,19 @@
     <h1>Coffee!</h1>
     <hr>
 
-    <div class="form-container">
-        <form>
-            <label for="roast-selection"></label>
+    <div class="roast-container">
+        <form target="_parent" method="GET">
+            <label for="roast-selection">Roast</label>
             <select id="roast-selection">
-                <option>light</option>
-                <option>medium</option>
-                <option>dark</option>
+                <option value="all">all</option>
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
             </select>
-            <input id="submit" type="submit" />
         </form>
+    </div>
 
+    <div class="search-coffee">
         <form>
             <label for="coffeeName">Coffee Name</label>
             <input type="text" id="coffeeName" name="coffeeName"><br>

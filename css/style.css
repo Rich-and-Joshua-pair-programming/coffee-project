@@ -46,6 +46,9 @@ h1 {
     padding-bottom: 40px;
 
 }
+label {
+    font-family: 'Montserrat', sans-serif
+}
 
 .btn {
     width: 100%;

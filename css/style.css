@@ -10,6 +10,12 @@
     align-items: center;
 
 }
+.card {
+    display: flex;
+    border: none;
+    font-family: 'Passion One', cursive;
+
+}
 
 .coffeeCup {
     height: 50px;
@@ -35,6 +41,10 @@ body {
 
 h1 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 40px;
+
 }
 
 .btn {
@@ -50,7 +60,7 @@ h1 {
     padding-left: 8px;
     font-size: 18px;
     padding-top: 7px;
-    margin-right: 150px;
+    /*margin-right: 150px;*/
 }
 
 .right-input {
@@ -61,11 +71,9 @@ h1 {
     font-size: 22px;
 }
 
-h1 {
-    padding-top: 50px;
-    padding-bottom: 40px;
-}
+/*#right-side {*/
 
+/*}*/
 
 #roast-selection {
     padding-top: 10px;

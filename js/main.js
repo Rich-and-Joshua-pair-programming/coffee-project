@@ -25,38 +25,33 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
-    let userText = searchForCoffee.value;
     let filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast && userText === "") {
+        if (coffee.roast === selectedRoast && coffeeSearch.value === "") {
             filteredCoffees.push(coffee);
-        } else if (selectedRoast === "all" && userText === "") {
+        } else if (selectedRoast === "all" && coffeeSearch.value === "") {
             filteredCoffees.push(coffee);
-        } else if (coffee.roast === selectedRoast && userText.toLowerCase() === coffee.name.toLowerCase()) {
+        } else if (coffee.roast === selectedRoast && coffeeSearch.value.toLowerCase() === coffee.name.toLowerCase()) {
             filteredCoffees.push(coffee);
-        }  else if (coffee.name.toLowerCase().includes(userText.toLowerCase())) {
+        } else if (coffee.name.toLowerCase().includes(coffeeSearch.value.toLowerCase())) {
             filteredCoffees.push(coffee)
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
 function myFunction() {
     let selectedRoast1 = roastSelection.value;
-    let userText = searchForCoffee.value;
     let filteredCoffees1 = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast1 && userText === "") {
+        if (coffee.roast === selectedRoast1 && coffeeSearch.value === "") {
             filteredCoffees1.push(coffee);
-        } else if (selectedRoast1 === "all" && userText === "") {
+        } else if (selectedRoast1 === "all" && coffeeSearch.value === "") {
             filteredCoffees1.push(coffee);
-        } else if (coffee.roast === selectedRoast1 && userText.toLowerCase() === coffee.name.toLowerCase()) {
+        } else if (coffee.roast === selectedRoast1 && coffeeSearch.value.toLowerCase() === coffee.name.toLowerCase()) {
             filteredCoffees1.push(coffee);
         } else if (coffee.name.includes("City") && selectedRoast1 === "all") {
             filteredCoffees1.push(coffee);
-        } else if (coffee.name.toLowerCase().includes(userText.toLowerCase())) {
-            filteredCoffees1.push(coffee)
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees1);
@@ -119,7 +114,6 @@ let coffeeAdd = document.querySelector('#coffeeAdd');
 let submitNewCoffee = document.querySelector('#submitNewCoffee');
 
 submitNewCoffee.addEventListener('click', addNewCoffee);
-
 // let submitCoffee = function (event) {
 //     alert(`You are searching for ${coffeeSearch.value}`);
 // }

@@ -85,3 +85,4 @@ roastSelection.addEventListener("change", updateCoffees);
 * displaying our coffees onto the page */
 showMeTheCoffee.innerHTML = renderCoffees(coffees);
 
+//Rich received

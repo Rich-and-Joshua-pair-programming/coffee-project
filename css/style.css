@@ -10,12 +10,15 @@
     align-items: center;
 
 }
+
 .coffeeCup {
     height: 50px;
 }
 .coffee {
-    background: var(--bgCardColor)
+    background: var(--bgCardColor);
+
 }
+
 body {
     font-family: sans-serif;
     background: var(--bgCardColor)
@@ -25,8 +28,6 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-
-
 
 .container {
     display: flex;
@@ -45,10 +46,11 @@ h1 {
 }
 
 .coffee-roast {
-    color: #aaaaaa;
+    color: black;
     padding-left: 8px;
     font-size: 18px;
     padding-top: 7px;
+    margin-right: 150px;
 }
 
 .right-input {
@@ -64,9 +66,6 @@ h1 {
     padding-bottom: 40px;
 }
 
-.coffee-roast {
-    margin-right: 150px;
-}
 
 #roast-selection {
     padding-top: 10px;

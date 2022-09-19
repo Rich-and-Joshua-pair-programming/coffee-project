@@ -63,8 +63,15 @@ function myFunction() {
     tbody.innerHTML = renderCoffees(filteredCoffees1);
 }
 
-function addNewCoffee() {
-    console.log(coffees.push(coffeeAdd.value));
+function addNewCoffee(e) {
+    e.preventDefault()
+    let newCoffeeArray = [];
+    const newCoffeeObject = {name: coffeeAdd.value, roast: roastSelection1.value};
+    newCoffeeArray.push(newCoffeeObject);
+    coffees.forEach(function(coffee) {
+        newCoffeeArray.push(coffee)
+    });
+    tbody.innerHTML = renderCoffees(newCoffeeArray);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide

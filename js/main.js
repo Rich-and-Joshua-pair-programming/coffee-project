@@ -1,10 +1,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="coffee">';
+    let html = '<div class="coffee card">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<div class="coffee-name">' + coffee.name + '</div>';
-    html += '<p class="coffee-roast">' + coffee.roast + '</p>';
+    html += '<img src="img/coffee-bag.png" class="card-img-top" alt="coffee bag">';
+    html += '<div class="coffee-name card-title">' + coffee.name + '</div>';
+    html += '<p class="coffee-roast card-text">' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
@@ -46,7 +47,6 @@ function updateCoffees(e) {
 }
 
 function myFunction() {
-    // alert(`You selected ${roastSelection.value}`);
     let selectedRoast1 = roastSelection.value;
     let filteredCoffees1 = [];
     coffees.forEach(function(coffee) {
@@ -58,11 +58,6 @@ function myFunction() {
             filteredCoffees1.push(coffee);
         } else if (coffee.name.includes("City") && selectedRoast1 === "all") {
             filteredCoffees1.push(coffee);
-            // } else if (coffee.name.includes("City") && selectedRoast1 === "light") {
-            //     filteredCoffees1.push(coffee);
-            //     if (filteredCoffees1.length === 3) {
-            //         filteredCoffees1.pop();
-            //     }
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees1);

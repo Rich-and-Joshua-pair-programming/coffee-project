@@ -1,15 +1,24 @@
-/*table {*/
-/*    border-collapse: collapse;*/
-/*    margin: 15px 0;*/
-/*}*/
 
-/*td, th {*/
-/*    border: 1px solid black;*/
-/*    padding: 5px 10px;*/
-/*}*/
 
+:root {
+    --bg-color: #eee7e5;
+    --bgCardColor: tan;
+}
+.headerWithPicture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.coffeeCup {
+    height: 50px;
+}
+.coffee {
+    background: var(--bgCardColor)
+}
 body {
     font-family: sans-serif;
+    background: var(--bgCardColor)
 }
 
 #coffees {
@@ -17,10 +26,7 @@ body {
     flex-wrap: wrap;
 }
 
-/*#coffees>* {*/
-/*    flex: 1 1 100px;*/
-/*    height: 90px;*/
-/*}*/
+
 
 .container {
     display: flex;
